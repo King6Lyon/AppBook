@@ -43,7 +43,7 @@ res.json({msg:'ur welcome login s', found,token})
 
 }catch(err){
         console.log(err)
-        res.json({msg:'you have a prob with ur login'})
+        res.status(400).json({msg:'you have a prob with ur login'})
     }
 }
 

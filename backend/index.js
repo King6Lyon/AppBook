@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
 import userRoutes from "./routes/user.js";
-
+import dotenv from 'dotenv';
 const app= express();
 // Middleware for parsing request body
 app.use(express.json());
@@ -13,6 +13,7 @@ app.use(express.json());
 // Option 1: Allow All Origins with Default of cors(*)
 app.use(cors());
 
+dotenv.config();
 
 
 mongoose
