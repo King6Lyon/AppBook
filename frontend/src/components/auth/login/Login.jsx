@@ -9,19 +9,31 @@ const navigate = useNavigate()
 const [email,setEmail]=useState('')
 const [password,setPassword]=useState('')
 
-const handelLogin=async(values)=>{
-try{
-const res = await axios.post('http://localhost:6319/auth/login',values)
-console.log('res login',res)
-await localStorage.setItem('token',res.data.token)
-alert('welcome ')
- navigate('/home')
-}catch(err){
-  alert('problem')
-console.log(err)
-}
-}
+const handelLogin = async (values) => {
+  try {
+    const res = await axios.post('http://localhost:6319/auth/login', values);
+    console.log('res login', res);
 
+    // Vérifiez si la réponse a un message 'Bienvenue' pour indiquer une connexion réussie
+    if (res.data.msg === 'Bienvenue !') {
+      // Stockez le token dans le stockage local
+      await localStorage.setItem('token', res.data.token);
+
+      // Affichez un message d'accueil
+      alert('Bienvenue !');
+
+      // Redirigez l'utilisateur vers la page d'accueil
+      navigate('/home');
+    } else {
+      // Si le message n'est pas 'Bienvenue', affichez un message d'erreur
+      alert('Adresse e-mail ou mot de passe incorrect');
+    }
+  } catch (err) {
+    // Si une erreur se produit, affichez un message d'erreur
+    alert('Problème lors de la connexion');
+    console.log(err);
+  }
+};
   return (
     <div>
     <div className="grid align__item">
