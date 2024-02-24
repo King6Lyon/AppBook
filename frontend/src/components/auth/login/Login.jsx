@@ -21,7 +21,7 @@ const Login = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#354152", color: "#7e8ba3", font: "300 1rem/1.5 Helvetica Neue, sans-serif", margin: 0, minHeight: "100%" }}>
+    <div style={{ backgroundColor: "#354152", color: "#7e8ba3", font: "300 1rem/1.5 Helvetica Neue, sans-serif", border: "1px solide ", margin: 0, minHeight: "100%" }}>
       <div className="align">
         <div className="register" style={{ boxShadow: "0 0 250px #000", textAlign: "center", padding: "4rem 2rem" }}>
           <svg xmlns="http://www.w3.org/2000/svg" className="site__logo" width={56} height={84} viewBox="77.7 214.9 274.7 412">
