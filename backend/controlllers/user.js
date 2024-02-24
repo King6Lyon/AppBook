@@ -1,4 +1,3 @@
-
 import  User  from '../models/User.js';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
@@ -31,19 +30,19 @@ const  login=async(req,res)=>{
 const {email,password}=req.body
 const found = await User.findOne({email})
 
-if(!found){return res.json({msg:'please register'})}
+if(!found){return res.status(400).json({msg:'please register'})}
 
 const match = await bcrypt.compare(password,found.password )
 if(!match){return res.json({msg:'psword ghalit'})}
 //partie token 
 const payload = {id : found._id}
 var token = jwt.sign(payload,process.env.privateKey)
-res.json({msg:'ur welcome login s', found,token})
+res.status(200).json({msg:'ur welcome login s', found,token})
 
 
 }catch(err){
         console.log(err)
-        res.status(400).json({msg:'you have a prob with ur login'})
+        res.status(500).json({msg:'you have a prob with ur login'})
     }
 }
 

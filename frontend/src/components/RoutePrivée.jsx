@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {fetchAccount} from '../Api/apiAuthentification'
 import Login from './auth/login/Login'
 
 const RoutePrivée = () => {
-    const navigate=useNavigate()
+    const navigate =useNavigate()
 const [authuser,setAuthuser]=useState('')
 const getAccout=async()=>{
     const data = await fetchAccount()

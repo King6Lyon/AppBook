@@ -1,4 +1,4 @@
-body {
+div {
     background-color: #354152;
     color: #7e8ba3;
     font: 300 1rem/1.5 Helvetica Neue, sans-serif;
@@ -41,7 +41,7 @@ input::placeholder {
     max-width: 25rem;
     width: 100%;
 }
-h2 {
+.title {
     font-size: 2.75rem;
     font-weight: 100;
     margin: 0 0 1rem;
